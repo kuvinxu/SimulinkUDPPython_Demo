@@ -26,7 +26,9 @@ The project is designed for MATLAB R2020a and Python 3.x, with support for Instr
 ### Python
 
 - Python 3.x
+
 - Libraries: `socket`, `struct`, `time`, `math`, `numpy`
+
 - Install dependencies:
   
   ```
@@ -66,11 +68,12 @@ The project is designed for MATLAB R2020a and Python 3.x, with support for Instr
    - **Run MATLAB Script (first):
 
 3- - open MATLAB, set current directory to the repository, and run `runDemo.m`.Run 
-   
-   - open MATLAB, set current directory to the repository, and run `runDemo.m`.Run 
-   
-   Run MATLAB Script (first):
-- Run MATLAB Script (first):
+
+- open MATLAB, set current directory to the repository, and run `runDemo.m`.Run 
+  
+  Run MATLAB Script (first):
+  
+  - Run MATLAB Script (first):
 
 - Python Script** (2nd):
 
@@ -103,34 +106,42 @@ python pythonControl.py
 ## Troubleshooting
 
 - **Port Occupation**:
+  
   - Run:
     
     ```
     netstat -aon | findstr "12345 12346 12347 12348 12349 12350 12351"
     ```
+  
   - Kill occupying processes:
     
     ```
     taskkill /PID <PID> /F
     ```
+
 - **Firewall**:
+  
   - Allow UDP ports:
     
     ```
     netsh advfirewall firewall add rule name="Allow UDP 12345-12351" dir=in action=allow protocol=UDP localport=12345-12350
     ```
+
 - **UDP Binding Failure**:
+  
   - Check socket errors in Python or UDP open failures in MATLAB.
+
 - **Simulink Errors**:
+  
   - Ensure `car.slx` has 3 logged signals (inputs, outputs, times).
     
     ![](C:\Users\pc\AppData\Roaming\marktext\images\2025-08-21-00-57-49-image.png)
+
 - **Byte Order**:
+  
   - Both sides use little-endian, no need for `swapbytes` in MATLAB.
 
 ## Notes
-
-
 
 - For debugging, enable `system('netstat -aon | findstr "ports"')` outputs.
 - Project tested on Windows; adjust for other OS (e.g., `netstat` to `ss` on Linux).
