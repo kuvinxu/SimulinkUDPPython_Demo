@@ -146,6 +146,10 @@ python pythonControl.py
 - For debugging, enable `system('netstat -aon | findstr "ports"')` outputs.
 - Project tested on Windows; adjust for other OS (e.g., `netstat` to `ss` on Linux).
 
+## Future Efforts
+
+- Now the time intervals in Simulink and python are 0.01s. In future, this may be optimized using different settings, such as in Python using timer interval 0.001s to monitor the state, and uisng 0.01s to implent the control
+
 ## License
 
 MIT License. See LICENSE for details.
