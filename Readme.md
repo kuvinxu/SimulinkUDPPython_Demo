@@ -59,30 +59,26 @@ The project is designed for MATLAB R2020a and Python 3.x, with support for Instr
 
 ## Usage
 
-1. **UDP prots in the system:**
+**UDP prots in the system:**
 
-![](C:\Users\pc\AppData\Roaming\marktext\images\2025-08-21-01-03-57-image.png)
+<img src="./images/UDPport.png" width = 60%>
 
-2. **Start the simulation**
-   
-   - **Run MATLAB Script (first):
+**Start the simulation**
 
-3- - open MATLAB, set current directory to the repository, and run `runDemo.m`.Run 
-
-- open MATLAB, set current directory to the repository, and run `runDemo.m`.Run 
+- Run MATLAB Script (step1):
   
-  Run MATLAB Script (first):
-  
-  - Run MATLAB Script (first):
+  - - open MATLAB, set current directory to the repository, and run `runDemo.m`.Run 
 
-- Python Script** (2nd):
+- Python Script (step2):
 
 ```
 python pythonControl.py
 ```
 
 - This binds UDP ports and waits for MATLAB handshake.
-3. **Execution Flow**:
+
+**Execution Flow**:
+
 - MATLAB sends handshake `[0, -1]` to Python via UDP.
 - Python receives, sends confirmation `[0, -1]` back.
 - MATLAB loads `car.slx`, runs 50 episodes:
@@ -135,11 +131,14 @@ python pythonControl.py
   
   - Ensure `car.slx` has 3 logged signals (inputs, outputs, times).
     
-    ![](C:\Users\pc\AppData\Roaming\marktext\images\2025-08-21-00-57-49-image.png)
+    
+    ![](./images/Logset.png)
+    
+    
 
 - **Byte Order**:
   
-  - Both sides use little-endian, no need for `swapbytes` in MATLAB.
+  - Both sides use*** little-endian***, no need for `swapbytes` in MATLAB.
 
 ## Notes
 
